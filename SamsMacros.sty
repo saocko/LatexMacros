@@ -1,0 +1,69 @@
+
+\newcommand{\quotes}[1]{``#1''}
+\newcommand{\paren}[1]{\left ( #1 \right )} 
+\newcommand{\abs}[1]{\left | #1 \right |}
+\newcommand{\bracket}[1]{{\left [ #1 \right ]}}
+
+%\biboptions{sort&compress} % To make citations like [10 - 15]
+\newcommand{\myunderbrace}[2]{\underbrace{#1}_{#2}}
+\newcommand{\SamCancel}[2]{\overbrace{\cancel{#1}}^{#2} } %Good for showing work and what turns into what
+
+\newcommand{\Sam}[1]{\textbf{\textcolor{blue}{[Sam-#1]}}}
+\newcommand{\Note}[1]{\textbf{\textcolor{red}{[Note-#1]}}}
+\definecolor{dark-gray}{gray}{0.3}
+\newcommand{\E}[1]{\textcolor{dark-gray}{#1}}
+\newcommand{\B}[1]{\textcolor{blue} { #1}}
+\newcommand{\R}[1]{\textcolor{red} { #1}}
+
+
+\newcommand{\myequation}[1]{\begin{eqnarray} #1 \end{eqnarray}}
+\newcommand{\myequationn}[1]{\begin{align*} #1 \end{align*}}
+
+\newcommand{\myfrac}[2]{\ensuremath{#1/#2}} %Can quickly switch between large fractions and small fractions
+\newcommand\ket[1]{\ensuremath{|#1\rangle} \xspace}
+\newcommand\bra[1]{\ensuremath{\langle#1|} \xspace}
+\newcommand\iprod[2]{\ensuremath{\langle#1|#2\rangle} \xspace}
+\newcommand\oprod[2]{\ensuremath{|#1\rangle\langle#2|} \xspace}
+\newcommand{\expt}[1]{\left \langle #1 \right \rangle}
+
+
+\renewcommand{\min}[2]{\ensuremath{\text{min}\left ( #1 ,\phantom{k} #2 \right )}}
+
+\newcommand{\thickhline}{\noalign{\hrule height 0.8pt}}
+\newcommand{\appendref}[1]{({Append. \ref{#1})}}
+\newcommand{\figref}[1]{({Fig. \ref{#1})}}
+\newcommand{\myeqref}[1]{Eq. \ref{#1}}
+
+
+
+\newenvironment{my_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+\newenvironment{my_item}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+
+\endinput
+
+%\clearpage
+%\newpage
+
+%
+
+
+
+
+
+
+
+
+
+
