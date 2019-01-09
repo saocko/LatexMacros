@@ -1,54 +1,150 @@
+%If we want to toggle inclusions
+\newcommand{\SamsInclude}[1]{\include{#1}}
 
+
+
+
+%If we want to switch from parenthesis to brackets to other things, this is a way to do it quickly. Quotes is also helpful because I never remember what the correct way to make quotes is.
 \newcommand{\quotes}[1]{``#1''}
-\newcommand{\paren}[1]{\left ( #1 \right )} 
-\newcommand{\abs}[1]{\left | #1 \right |}
+\newcommand{\paren}[1]{\left ( #1 \right )}
 \newcommand{\bracket}[1]{{\left [ #1 \right ]}}
+
+%\newcommand{\sparen}[1]{ ( #1  )}
+%\newcommand{\sbracket}[1]{{ [ #1  ]}}
+
+
+\newcommand{\curly}[1]{{\left \{ #1 \right \}  }}
+
+\newcommand{\abs}[1]{\left | #1 \right |}
+\newcommand{\abssquared}[1]{\left | #1 \right |^{2}}
+\newcommand{\absfourth}[1]{\left | #1 \right |^{4}}
+
+\newcommand{\sabs}[1]{ | #1  |}
+\newcommand{\sabssquared}[1]{ | #1  |^{2}}
+\newcommand{\sabsfourth}[1]{ | #1  |^{4}}
+
+\newcommand{\norm}[1]{\abs{\abs{#1}}}
+
+
+% If we want to toggle between large and small parenthesis, etc
+\newcommand{\sparen}[1]{ (#1)}
+\newcommand{\sbracket}[1]{{ [ #1  ] }}
+\newcommand{\scurly}[1]{{ \{ #1  \}  }}
+
+
+\newcommand\ket[1]{\ensuremath{|#1\rangle} \xspace} 
+\newcommand\bra[1]{\ensuremath{\langle#1|} \xspace}
+\newcommand{\expt}[1]{\left \langle #1 \right \rangle}	
+
+
 
 %\biboptions{sort&compress} % To make citations like [10 - 15]
 \newcommand{\myunderbrace}[2]{\underbrace{#1}_{#2}}
-\newcommand{\SamCancel}[2]{\overbrace{\cancel{#1}}^{#2} } %Good for showing work and what turns into what
+\newcommand{\myunderbracee}[2]{{#1}}
 
-\newcommand{\Sam}[1]{\textbf{\textcolor{blue}{[Sam-#1]}}}
+
+\newcommand{\myoverbrace}[2]{\overbrace{#1}^{#2}}
+\newcommand{\myoverbracee}[2]{{#1}}
+
+
+\newcommand{\SamCancel}[2]{\overbrace{\cancel{#1}}^{#2} }
+\newcommand{\TODO}[1]{{\R{\Large{TODO-#1}}}} %%INTERSTING OBSERVATION-If the \large and the \R are switched, the text size persists. I don't know why
+
+%\newcommand{\Sam}[1]{}
+%\newcommand{\Sam}[1]{}
+
+
+
 \newcommand{\Note}[1]{\textbf{\textcolor{red}{[Note-#1]}}}
 \definecolor{dark-gray}{gray}{0.3}
 \newcommand{\E}[1]{\textcolor{dark-gray}{#1}}
 \newcommand{\B}[1]{\textcolor{blue} { #1}}
 \newcommand{\R}[1]{\textcolor{red} { #1}}
 
+%I find it easier to use the curly  bracket framework rather than use the \begin \end{environment} framework. This is a nice wrapper for that.
+\newcommand{\myfig}[1]{\begin{figure}[h!] #1 \end{figure}}
+\newcommand{\mystarfig}[1]{\begin{figure*}[h!] #1 \end{figure*}}
+
+\newcommand{\mysidecapfig}[1]{\begin{SCfigure} #1 \end{SCfigure}}
+
+
+\newcommand{\mysidecapfigstar}[1]{\begin{SCfigure*} #1 \end{SCfigure*}}
+
+
+\newcommand{\mywrapfigr}[2]{\begin{wrapfigure}{R}{#1} #2 \end{wrapfigure}}
+\newcommand{\mywrapfigl}[2]{\begin{wrapfigure}{L}{#1} #2 \end{wrapfigure}}
+
+
+\newcommand{\mywrapfigstarl}[2]{\begin{wrapfigure*}{L}{#1} #2 \end{wrapfigure*}}
+
+%\newcommand{\mywrapfigr}[2]{\begin{wrapfigure}{R}{#1} #2 \end{wrapfigure}}
+%\newcommand{\mywrapfigl}[2]{\begin{wrapfigure}{L}{#1} #2 \end{wrapfigure}}
+
+
+%I find it easier to use the curly  bracket framework rather than use the \begin \end{environment} framework. This is a nice wrapper for that.
+\newcommand{\es}[2] {\begin{equation} \label{#1} \begin{split} #2 \end{split} \end{equation}}
 
 \newcommand{\myequation}[1]{\begin{eqnarray} #1 \end{eqnarray}}
 \newcommand{\myequationn}[1]{\begin{align*} #1 \end{align*}}
+\newcommand{\myequationnn}[1]{\ensuremath{#1}}
 
+
+\newcommand{\mysmallequationn}[1]{
+\small
+\begin{align*}
+#1
+\end{align*}
+\normalsize
+}
+
+\newcommand{\invfrac}[2]{\frac{#2}{#1}} %Can quickly invert fractions
 \newcommand{\myfrac}[2]{\ensuremath{#1/#2}} %Can quickly switch between large fractions and small fractions
-\newcommand\ket[1]{\ensuremath{|#1\rangle} \xspace}
-\newcommand\bra[1]{\ensuremath{\langle#1|} \xspace}
 \newcommand\iprod[2]{\ensuremath{\langle#1|#2\rangle} \xspace}
 \newcommand\oprod[2]{\ensuremath{|#1\rangle\langle#2|} \xspace}
-\newcommand{\expt}[1]{\left \langle #1 \right \rangle}
+\newcommand\nhoodof[2]{\ensuremath{\left. #1 \right| _{#2}} \xspace} %Derivatives in the neighborhood of
 
+
+
+
+
+%A bunch of ways defining derivatives. This makes changing styles much easier. 
+\newcommand{\dd}[2]{\ensuremath{\frac{d#1}{d#2}} \xspace } %Puts the object at the top of the fraction
+\newcommand{\opdd}[2]{\ensuremath{\frac{d}{d#2} #1 } \xspace } %Treats the derivative as an operator
+\newcommand{\ldd}[2]{\ensuremath{\myfrac{d#1}{d#2}} \xspace } %%Puts it on a single line. Good for inline math.
+\newcommand{\lopdd}[2]{\ensuremath{\myfrac{d}{d#2} #1 } \xspace } %Treats the derivative as an operator, where we put the operator on a single line
+
+%A bunch of ways of saying d/dt. Just a wrapper for the previous macros. This makes changing styles much easier. You can hardcode derivatives with respect to other variables you care about. 
+\newcommand{\ddt}[1]{\dd{#1}{t}}
+\newcommand{\opddt}[1]{\opdd{#1}{t}}
+\newcommand{\lddt}[1]{\ldd{#1}{t}}
+\newcommand{\lopddt}[1]{\lopdd{#1}{t}}
+
+
+\newcommand{\maybedens}[1]{}
 
 \renewcommand{\min}[2]{\ensuremath{\text{min}\left ( #1 ,\phantom{k} #2 \right )}}
 
 \newcommand{\thickhline}{\noalign{\hrule height 0.8pt}}
-\newcommand{\appendref}[1]{({Append. \ref{#1})}}
-\newcommand{\figref}[1]{({Fig. \ref{#1})}}
-\newcommand{\myeqref}[1]{Eq. \ref{#1}}
+
+%Make references easier. If you want to change the format of your references, you can just change it here.
+\newcommand{\mysecref}[1]{{\text{Sec.} \ref{#1}}}
+\newcommand{\myfigref}[1]{{\text{Fig.} \ref{#1}}}
+\newcommand{\myeqref}[1]{\text{Eq.} \ref{#1}}
+\newcommand{\myappref}[1]{\text{App.} \ref{#1}}
 
 
 
-\newenvironment{my_enum}{
-\begin{enumerate}
-  \setlength{\itemsep}{1pt}
-  \setlength{\parskip}{0pt}
-  \setlength{\parsep}{0pt}
-}{\end{enumerate}}
 
-\newenvironment{my_item}{
-\begin{itemize}
-  \setlength{\itemsep}{1pt}
-  \setlength{\parskip}{0pt}
-  \setlength{\parsep}{0pt}
-}{\end{itemize}}
+%A bunch of togglable helpers for editing, etc.
+\newcommand{\first}[2]{#1}
+%\newcommand{\myfootnote}[1]{(Footnote-#1)}
+%\newcommand{\myfootnote}[1]{}
+\newcommand{\myfootnote}[1]{\footnote{#1}}
+
+%\def \myforall{\forall}
+\def \myforall{\text{ For all }}
+\def \youwerehere{\R{\LARGE{(YOU WERE HERE)}}}
+
 
 
 \endinput
